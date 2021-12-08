@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color: rgb(145, 1, 1);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-btn{
+    background-color: red;
+    width: 200px;
+}
