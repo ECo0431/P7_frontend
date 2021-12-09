@@ -1,20 +1,30 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
-import Register from './pages/Register';
-import NotFound from './pages/NotFound';
-import Profil from './pages/Profil';
+import React, { useEffect } from "react";
+import Routes from "./components/Routes/index";
+import { UidContext } from "./components/AppContext";
+import axios from "axios";
 
 const App = () => {
+  const [uid, setUid] = useState(null);
+
+  useEffect(() => {
+    const fetchToken = async () => {
+      await axios({
+        methode: "get",
+        url: `http://localhost:3000/api/users/login` + `jwtid`,
+        withCredentials: true,
+      })
+        .then((res) => {
+          setUid(res.data);
+        })
+        .catch((err) => console.log("No token"));
+    };
+    fetchToken();
+  }, [uid]);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/profil" element={<Profil />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <UidContext.Provider value={uid}>
+      <Routes />
+    </UidContext.Provider>
   );
 };
 
