@@ -14,19 +14,19 @@ body {
     rgba(140, 2, 2, 1) 100%
   );
   background-size: 400% 400%;
-  animation: gradient 40s ease infinite;
+  animation: gradient 20s ease infinite;
   height: 100vh;
 }
 
 @keyframes gradient {
   0% {
-    background-position: 0% 50%;
-  }
-  50% {
     background-position: 100% 50%;
   }
-  100% {
+  50% {
     background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
 
@@ -182,4 +182,31 @@ a {
 
 .icon-remarks {
   fill: white;
+}
+
+.box-err {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.txt-err {
+  color: white;
+}
+
+.img-fond {
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.log-container,
+.posts-card,
+header {
+  position: relative;
+  z-index: 2;
 }

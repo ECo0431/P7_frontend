@@ -12,6 +12,7 @@ const Home = () => {
       <div className="log-container">
         <Log signin={false} signup={true} />
       </div>
+      <img className="img-fond" src="./img/fond.png"></img>
     </div>
   );
 };

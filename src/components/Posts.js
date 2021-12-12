@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import Remarks from "../pages/Remarks";
 
 const Posts = (props) => {
   const { posts } = props;
+  const [data, setData] = useState("hello");
+  const ok = document.querySelector(".ok");
+
+  const test = () => {
+    ok.innerHTML += "noijonijnbijb";
+  };
+
   return (
     <div className="card-box">
+      <p className="ok"></p>
       <div className="box-icon-posts">
         <svg
+          onClick={test}
           className="icon-posts"
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
@@ -20,6 +30,7 @@ const Posts = (props) => {
       <h2>{posts.title}</h2>
       <p className="description-posts">{posts.description}</p>
       <img src={posts.img} alt={posts.title}></img>
+      <Remarks />
     </div>
   );
 };

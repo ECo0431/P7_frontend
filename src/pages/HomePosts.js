@@ -16,12 +16,11 @@ const HomePosts = () => {
     <div className="all-posts">
       <Header />
       <div className="posts-card">
-        <a href="/">
-          {data.map((posts) => (
-            <Posts posts={posts} key={posts.id_posts} />
-          ))}
-        </a>
+        {data.map((posts) => (
+          <Posts posts={posts} key={posts.id_posts} />
+        ))}
       </div>
+      <img className="img-fond" src="./img/fond.png"></img>
     </div>
   );
 };
