@@ -20,15 +20,16 @@ const SignInForm = () => {
       },
     })
       .then((res) => {
-        if (res.data.errors) {
-          emailErrror.innerHTML = "email inconnu";
-          passwordError.innerHTML = "mot de passe invalide";
+        if (res.data.error) {
+          console.log("errors");
         } else {
           window.location = "/homeposts";
         }
       })
       .catch((err) => {
         console.log(err);
+        emailErrror.innerHTML = "Email inconnu";
+        passwordError.innerHTML = "Mot de passe invalide";
       });
   };
 

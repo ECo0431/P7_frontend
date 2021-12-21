@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import Remarks from "../pages/Remarks";
+import PostsARemark from "./PostsARemark";
 
 const Posts = (props) => {
   const { posts } = props;
   const [data, setData] = useState("hello");
-  const ok = document.querySelector(".ok");
-
-  const test = () => {
-    ok.innerHTML += "noijonijnbijb";
-  };
 
   return (
     <div className="card-box">
-      <p className="ok"></p>
       <div className="box-icon-posts">
         <svg
-          onClick={test}
           className="icon-posts"
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
@@ -30,7 +24,8 @@ const Posts = (props) => {
       <h2>{posts.title}</h2>
       <p className="description-posts">{posts.description}</p>
       <img src={posts.img} alt={posts.title}></img>
-      <Remarks />
+      <Remarks idPosts={posts.id_posts} />
+      <PostsARemark idPosts={posts.id_posts} />
     </div>
   );
 };

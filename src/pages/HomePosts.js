@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Posts from "../components/Posts";
 import Header from "./Header";
+import PostAPosts from "../components/PostAPosts";
 
 const HomePosts = () => {
   const [data, setData] = useState([]);
@@ -15,6 +16,7 @@ const HomePosts = () => {
   return (
     <div className="all-posts">
       <Header />
+      <PostAPosts />
       <div className="posts-card">
         {data.map((posts) => (
           <Posts posts={posts} key={posts.id_posts} />

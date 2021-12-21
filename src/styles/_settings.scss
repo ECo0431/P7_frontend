@@ -85,7 +85,8 @@ label {
   flex-direction: column;
 }
 
-.btn-login {
+.btn-login,
+.btn-posts {
   background-color: white;
   text-decoration: none;
   border: none;
@@ -206,7 +207,43 @@ a {
 
 .log-container,
 .posts-card,
-header {
+header,
+form {
   position: relative;
   z-index: 2;
+}
+
+.error {
+  color: red;
+}
+
+#posts-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#title,
+#description {
+  border-radius: 10px;
+  border: none;
+  opacity: 0.5;
+  width: 300px;
+}
+
+#title:hover,
+#description:hover {
+  opacity: 1;
+}
+
+#commentaire {
+  border-radius: 10px;
+  border: none;
+  opacity: 0.5;
+  width: 100%;
+}
+
+#commentaire:hover {
+  opacity: 1;
 }

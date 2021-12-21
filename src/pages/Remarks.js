@@ -3,11 +3,11 @@ import axios from "axios";
 import HomePosts from "./HomePosts";
 
 const Remarks = (props) => {
-  const { remarks } = props;
+  const { remarks, idPosts } = props;
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/posts/2/remarks`)
+      .get(`http://localhost:3000/api/posts/${idPosts}/remarks`)
       .then((res) => setData(res.data));
   }, []);
   return (
