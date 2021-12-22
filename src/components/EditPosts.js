@@ -1,35 +1,31 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Posts from "./Posts";
 
-const PostAPosts = () => {
+const EditPosts = (props) => {
+  const { remarks, idPosts } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const formEditPost = document.querySelector("#posts-form-edit");
 
-  const postAPost = (e) => {
+  const putPost = (e) => {
+    // e.preventDefault();
     axios({
-      method: "post",
-      url: "http://localhost:3000/api/users/1/posts",
+      method: "put",
+      url: `http://localhost:3000/api/users/1/posts/${idPosts}`,
       withCredentials: true,
       data: {
         title: title,
         description: description,
       },
-    })
-      .then((res) => {
-        if (res.data.error) {
-          console.log("errors");
-        } else {
-          window.location = "/homeposts";
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    });
   };
   return (
-    <form action="" onSubmit={postAPost} id="posts-form">
+    <form className="none" action="" onSubmit={putPost} id="posts-form-edit">
       <div className="box-posts box-posts-title">
-        <label htmlFor="title">Titre</label>
+        <label className="color-purple" htmlFor="title">
+          Titre
+        </label>
         <br />
         <input
           type="text"
@@ -41,7 +37,9 @@ const PostAPosts = () => {
       </div>
       <br />
       <div className="box-posts box-posts-description">
-        <label htmlFor="description">Description</label>
+        <label className="color-purple" htmlFor="description">
+          Description
+        </label>
         <br />
         <textarea
           type="text"
@@ -53,10 +51,10 @@ const PostAPosts = () => {
       </div>
       <br />
       <div className="box-posts box-posts-btn">
-        <input className="btn-posts" type="submit" value="Publier" />
+        <input className="btn-posts" type="submit" value="Modifier" />
       </div>
     </form>
   );
 };
 
-export default PostAPosts;
+export default EditPosts;

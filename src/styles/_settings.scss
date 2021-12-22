@@ -114,6 +114,7 @@ p {
 }
 
 .card-box {
+  min-width: 370px;
   padding: 60px 40px 40px 40px;
   background-color: rgba(255, 255, 255, 0.7);
   margin: 40px;
@@ -145,6 +146,12 @@ p {
   position: absolute;
   top: 15px;
   right: 15px;
+  cursor: pointer;
+}
+
+.icon-posts.edit,
+.icon-posts.close {
+  right: 50px;
 }
 
 .icon-posts:hover {
@@ -164,7 +171,7 @@ a {
 }
 
 .remarks-box {
-  padding: 20px;
+  padding: 10px 10px 10px 20px;
   border: 1px solid purple;
   background: rgb(33, 0, 57);
   background: linear-gradient(
@@ -213,6 +220,11 @@ form {
   z-index: 2;
 }
 
+.posts-card {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .error {
   color: red;
 }
@@ -246,4 +258,41 @@ form {
 
 #commentaire:hover {
   opacity: 1;
+}
+
+.btn-remark {
+  background-color: purple;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.color-purple {
+  color: purple;
+}
+
+.box-icon-remarks {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-remarks {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.icon-remarks:hover {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.none {
+  display: none;
 }
